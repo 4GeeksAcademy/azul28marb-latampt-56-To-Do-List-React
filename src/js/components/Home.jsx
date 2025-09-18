@@ -19,12 +19,12 @@ const Home = () => {
 							onChange={(e) => setInputValue(e.target.value)}
 							value={inputValue}
 							onKeyUp={(e) => {
-								if (e.key === "Enter") {
-									setToDos(toDos.concat(inputValue))
-									setInputValue("")
+								if (e.key === "Enter" && inputValue.trim() !== "") {
+									setToDos(toDos.concat(inputValue.trim()));
+									setInputValue("");
 								}
 							}}
-							placeholder="What needs to be done?"></input>
+							placeholder="No hay tareas, añadir tareas"></input>
 					</li>
 					{toDos.map((item, index) => (
 						<li className="todo-item" key={index}>
@@ -44,7 +44,7 @@ const Home = () => {
 					))}
 				</ul>
 				<ul>
-					<li className="NumberTasks">{toDos.length} tasks</li>
+					<li className="NumberTasks">{toDos.length} tareas</li>
 				</ul>
 			</div>
 	);
