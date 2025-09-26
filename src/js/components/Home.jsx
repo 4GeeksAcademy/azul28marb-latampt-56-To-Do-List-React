@@ -24,7 +24,7 @@ const Home = () => {
 									setInputValue("");
 								}
 							}}
-							placeholder="No hay tareas, añadir tareas"></input>
+							placeholder="¿Qué necesitas completar?"></input>
 					</li>
 					{toDos.map((item, index) => (
 						<li className="todo-item" key={index}>
@@ -43,6 +43,11 @@ const Home = () => {
 						</li>
 					))}
 				</ul>
+				{toDos.length === 0 && (
+					<p style={{ color: "#888", marginTop: "10px", fontSize: "18px", textAlign: "center" }}>
+						No hay tareas, añadir tareas
+					</p>
+				)}
 				<ul>
 					<li className="NumberTasks">{toDos.length} tareas</li>
 				</ul>
